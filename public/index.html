@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Budget</title>
+    <!-- This is an SEO Change -->
     <meta name="description" content="A free personal budger app">
+    <!-- This is an SEO Change -->
     <meta name="keywords" content="app free budget finance">
+    <!-- This is an SEO Change -->
+    <link rel="canonical" href="https://http://64.227.53.255/">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="main.css">
 </head>
@@ -13,6 +17,8 @@
 
 <a href="#main" class="skip">Skip to content</a>
 
+<!-- This is a Semantic HTML Change -->
+<header>
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
@@ -22,14 +28,18 @@
         </ul>
     </nav>
 
-    <div class="hero">
+    <!-- This is an A11y Change -->
+    <div class="hero" role="banner">
         <h1>Personal Budget</h1>
         <h2>A personal-budget management app</h2>
     </div>
+</header>
 
+    <!-- This is a Semantic HTML Change -->
     <main class="center" id="main">
 
-        <div class="page-area">
+        <!-- This is a Semantic HTML Change -->
+        <section class="page-area">
 
             <article>
                 <h1>Stay on track</h1>
@@ -91,17 +101,20 @@
             <article>
                 <h1>Chart</h1>
                 <p>
-                    <canvas id="myChart" width="400" height="400"></canvas>
+                    <!-- This is an A11y Change -->
+                    <canvas id="myChart" width="400" height="400" aria-label="Budget distribution chart" role="img"></canvas>
                 </p>
             </article>
 
-        </div>
+        </section>
 
     </main>
 
+    <!-- This is a Semantic HTML Change -->
     <footer class="bottom">
         <div class="center">
-            All rights reserved &copy; Fabio Nolasco
+            <!-- This is an A11y Change -->
+            <small>All rights reserved &copy; ThanmayDas</small> 
         </div>
     </footer>
 
