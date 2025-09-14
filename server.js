@@ -4,29 +4,26 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const port = 3000;
+const fs = require('fs');
 
-app.use(cors());
+app.use(cors());    
 
-const budget = {
-    myBudget: [
-        {
-            title: 'Eat out',
-            budget: 25
-        },
-        {
-            title: 'Rent',
-            budget: 275
-        },
-        {
-            title: 'Grocery',
-            budget: 110
-        },
-    ]
-};
+app.use('/', express.static('public'));
 
+app.get('/home', (req, res) => {
+    res.sendFile(__dirname + '/public/inde.html');
+}
+);
 
 app.get('/budget', (req, res) => {
-    res.json(budget);
+    fs.readFile('budget.json', 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading file:', err);
+            return res.status(500).json({ error: 'Error reading budget data' });
+        }
+        const budget = JSON.parse(data);
+        res.json(budget);
+    });
 });
 
 app.listen(port, () => {
